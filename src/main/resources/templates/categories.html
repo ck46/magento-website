@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Product Categories</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <a href="/"><button>Home</button></a>
+    <h2>Product Categories</h2>
+    <div th:each="sb : ${categories}">
+        <p th:with="id=${sb.getId()}">
+            <a th:href="@{/category(id=${id})}"><span th:text="${sb.getName()}"></span></a>
+        </p>
+    </div>
+</body>
+</html>

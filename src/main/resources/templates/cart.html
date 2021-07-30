@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>My Cart</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <a href="/"><button>Home</button></a> <a href="/categories"><button>Categories</button></a>
+    <h2>Order Summary</h2>
+    <div>
+        <p>item</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr th:each="sb : ${cartitems}">
+                <td th:text="${sb.getName()}"></td>
+                <td th:text="${sb.getPrice()}"></td>
+                <td th:text="${sb.getQty()}"></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
